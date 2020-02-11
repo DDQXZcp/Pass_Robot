@@ -12,3 +12,9 @@ Isolate quadratic cylinder task
 ### Use VESC as chassis wheel instead of Maxon motor
 
 Isolate Maxon motor code
+
+## Modification: 
+
+### main.cpp
+
+delete: void init_path()
