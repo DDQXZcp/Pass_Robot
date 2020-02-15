@@ -21,4 +21,31 @@ Add a new file to increase flexibility of different design
 
 ### main.cpp
 
-delete: void init_path()
+Ensure that automode is always false
+
+There are four functions related to autoMode changes
+~~~
+void high_func_L1(){
+  if (!autoMode);
+    autoMode = true;
+}
+~~~
+~~~
+void high_func_R1(){
+  if (autoMode);
+    autoMode = false;
+}
+~~~
+~~~
+void fall_func_L1(){
+  if (!autoMode);
+    autoMode = true;
+}
+~~~
+~~~
+void fall_func_R1(){
+  if (autoMode);
+    autoMode = false;
+}
+~~~
+So that's obvious: L1: active automode, R1: manual mode
