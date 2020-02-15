@@ -13,6 +13,10 @@ Isolate quadratic cylinder task
 
 Isolate Maxon motor code
 
+### Add a new file called general_config.h
+
+Add a new file to increase flexibility of different design
+
 ## Modification: 
 
 ### main.cpp
