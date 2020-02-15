@@ -64,4 +64,12 @@ There is an example of #ifdef:
 #endif
 ~~~
 
-Use #ifdef and #endif to pack up the things
+Use #ifdef and #endif to pack up:
+
+1. autoMode changing to true 
+
+2. motorUpdateTicker.attach(&motorUpdate, UPDATE_RATE);
+
+3. motorUpdateTicker.detach();
+
+Use #define pass_robot to hide autoMode
