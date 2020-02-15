@@ -23,6 +23,8 @@ while (1)
 //Serial ps4PC(USBTX,USBRX,115200); //This is for PS4 input debug.
 //DigitalOut myled(LED1);
 
+#define pass_robot
+
 void initPath()
 {
 points[0] = (pointInfo){.targetPos.x = 0.0948683, .targetPos.y = 0.0316228, .targetPos.w = 0};
@@ -329,9 +331,10 @@ void high_func_L1()
         maxSpeed.x = 1.5;
         maxSpeed.y = 1.5;
         maxSpeed.w = 1.5;
-        
+#ifdef pass_robot       
         autoMode = true;
         motorUpdateTicker.attach(&motorUpdate, UPDATE_RATE);
+#endif
     }
 }
 void high_func_L3() {}
@@ -357,7 +360,9 @@ void high_func_R1()
         maxSpeed.w = 1.5;
         
         autoMode = false;
+#ifdef pass_robot  
         motorUpdateTicker.detach();
+#endif
         motor.manual(); //This changes the acceleration to 99999;
         inverse(0,0,0);
     }
@@ -448,7 +453,9 @@ void fall_func_R1()
         maxSpeed.w = 1.5;
         
         autoMode = false;
+#ifdef pass_robot  
         motorUpdateTicker.detach();
+#endif
     }
 }
 void fall_func_L3() {}
@@ -472,9 +479,10 @@ void fall_func_L1()
         maxSpeed.x = 1.5;
         maxSpeed.y = 1.5;
         maxSpeed.w = 1.5;
-        
+#ifdef pass_robot         
         autoMode = true;
         motorUpdateTicker.attach(&motorUpdate, UPDATE_RATE);
+#endif
     }
 }
 void fall_func_R3() {}
