@@ -802,7 +802,7 @@ int main()
     
     if(autoMode == false)
         motor.manual();
-        
+#ifdef ROBOT_HAS_AUTO        
     // Block until the USER_BUTTON is pressed to start he auto mode
     while(1)
     {
@@ -820,7 +820,7 @@ int main()
             }
         }
     }
-    
+#endif    
     while (1)
     {
         if (autoMode)
