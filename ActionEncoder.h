@@ -37,5 +37,3 @@ class ActionEncoder : public Serial {
 };
 
 
-
-
