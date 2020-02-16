@@ -20,6 +20,8 @@ while (1)
 #include "main.h"
 #include <string>
 
+#define ROBOT_HAS_AUTO
+
 //VESC vesc;
 //Serial ps4PC(USBTX,USBRX,115200); //This is for PS4 input debug.
 //DigitalOut myled(LED1);
@@ -302,9 +304,10 @@ void high_func_L1()
         maxSpeed.x = 1.5;
         maxSpeed.y = 1.5;
         maxSpeed.w = 1.5;
-        
+#ifdef ROBOT_HAS_AUTO
         autoMode = true;
         motorUpdateTicker.attach(&motorUpdate, UPDATE_RATE);
+#endif
     }
 }
 void high_func_L3() {}
@@ -329,9 +332,10 @@ void high_func_R1()
         maxSpeed.x = 1.5;
         maxSpeed.y = 1.5;
         maxSpeed.w = 1.5;
-        
+#ifdef ROBOT_HAS_AUTO        
         autoMode = false;
         motorUpdateTicker.detach();
+#endif
         motor.manual(); //This changes the acceleration to 99999;
         inverse(0,0,0);
     }
@@ -421,9 +425,10 @@ void fall_func_R1()
         maxSpeed.x = 1.5;
         maxSpeed.y = 1.5;
         maxSpeed.w = 1.5;
-        
+ #ifdef ROBOT_HAS_AUTO       
         autoMode = false;
         motorUpdateTicker.detach();
+#endif
     }
 }
 void fall_func_L3() {}
@@ -448,9 +453,10 @@ void fall_func_L1()
         maxSpeed.x = 1.5;
         maxSpeed.y = 1.5;
         maxSpeed.w = 1.5;
-        
+#ifdef ROBOT_HAS_AUTO        
         autoMode = true;
         motorUpdateTicker.attach(&motorUpdate, UPDATE_RATE);
+#endif
     }
 }
 void fall_func_R3() {}
@@ -779,8 +785,10 @@ int main()
 {
     //myled = 1;
     //diu.printf("1");
+#ifdef ROBOT_HAS_AUTO
     pc.printf("Now in main(), before initPath()");
     initPath();
+#endif
     //diu.printf("2");
     // Manual mode
     PS4_SERIAL_INIT();
