@@ -788,6 +788,8 @@ int main()
 #ifdef ROBOT_HAS_AUTO
     pc.printf("Now in main(), before initPath()");
     initPath();
+#else
+    autoMode = false;
 #endif
     //diu.printf("2");
     // Manual mode
