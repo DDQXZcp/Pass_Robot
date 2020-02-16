@@ -21,7 +21,7 @@ Add a new file to increase flexibility of different design
 
 ### main.cpp
 
-Ensure that automode is always false
+(1) Ensure that automode is always false
 
 There are four functions related to autoMode changes
 ~~~
@@ -64,7 +64,7 @@ There is an example of #ifdef:
 #endif
 ~~~
 
-Use #ifdef and #endif to pack up:
+Use #ifdef and #endif to bypass:(Use #ifndef here)
 
 1. autoMode changing to true 
 
@@ -72,4 +72,10 @@ Use #ifdef and #endif to pack up:
 
 3. motorUpdateTicker.detach();
 
-Use #define pass_robot to hide autoMode
+Use #define ROBOT_HAS_AUTO to select
+
+(2) Bypass initpath() in main
+
+### slave.cpp 
+
+Integrate it in master. No need to receive now. Just execute directly.
