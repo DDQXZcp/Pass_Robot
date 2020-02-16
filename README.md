@@ -75,7 +75,14 @@ Use #ifdef and #endif to bypass:(Use #ifndef here)
 Use #define ROBOT_HAS_AUTO to select
 
 (2) Bypass initpath() in main
-
+~~~
+#ifdef ROBOT_HAS_AUTO
+    pc.printf("Now in main(), before initPath()");
+    initPath();
+#else
+    autoMode = false;
+#endif
+~~~
 ### slave.cpp 
 
 Integrate it in master. No need to receive now. Just execute directly.
