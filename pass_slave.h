@@ -1,4 +1,6 @@
 #include "mbed.h"
+#include "hfCore.h"
+#include "airCore.h"
 
 class SlaveBoard : public Serial {
     private:
