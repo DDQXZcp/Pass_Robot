@@ -83,6 +83,8 @@ Use #define ROBOT_HAS_AUTO to select
     autoMode = false;
 #endif
 ~~~
-### slave.cpp 
+### pass_slave.cpp - New file to replace slaveBoard.h
 
-Integrate it in master. No need to receive now. Just execute directly.
+Eliminate the intermediate serial transmission
+
+the new class is not serial anymore, cancel the inheritance
