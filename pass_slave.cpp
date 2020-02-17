@@ -1,7 +1,5 @@
 #include "pass_slave.h"
 
-#include "hfCore.h"
-#include "airCore.h"
 
 //No need
 //SlaveBoard::SlaveBoard(PinName tx, PinName rx) : Serial(tx, rx){}
