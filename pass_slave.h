@@ -2,11 +2,10 @@
 #include "hfCore.h"
 #include "airCore.h"
 
-class SlaveBoard : public Serial {
+class SlaveBoard {
     private:
         
     public:
-        SlaveBoard(PinName tx, PinName rx);
         void homing();
         void readyPosition();
         void fire();
