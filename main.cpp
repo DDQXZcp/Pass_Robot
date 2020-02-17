@@ -19,6 +19,7 @@ while (1)
 
 #include "main.h"
 #include <string>
+#include "pass_slave.h"
 
 #define ROBOT_HAS_AUTO
 
